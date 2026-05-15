@@ -21,11 +21,7 @@ function Home({ config }: Props) {
       <main>
         <Navbar />
         <Header />
-        <Partners />
-        <Features />
         <HowItWorks />
-        <Pricing />
-        <Testimonials />
         <Faq />
         <AppBanner />
         <Footer />

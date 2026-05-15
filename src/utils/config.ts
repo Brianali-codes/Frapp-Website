@@ -1,14 +1,14 @@
 import type { TemplateConfig } from "./configType";
 
 const templateConfig: TemplateConfig = {
-  name: "Lorem Ipsum",
+  name: "FRAPP",
   seo: {
-    title: "Mobile App Landing Template",
-    description: "Mobile App Landing Template",
+    title: "Frapp",
+    description: "Get videogame giveaways with Frapp",
   },
   // Draws grid behind main container
   backgroundGrid: false,
-  logo: "/logo.svg",
+  logo: "/logo.png",
   theme: "corporate",
   // Forces theme to be chosen above, no matter what user prefers
   forceTheme: false,
@@ -29,9 +29,7 @@ const templateConfig: TemplateConfig = {
       twitter: "https://x.com/google",
     },
     links: [
-      { href: "/#features", title: "Features" },
       { href: "/#how-it-works", title: "How it works" },
-      { href: "/#pricing", title: "Pricing" },
       { href: "/#faq", title: "FAQ" },
     ],
   },
@@ -41,9 +39,7 @@ const templateConfig: TemplateConfig = {
     hideAppStore: false,
     hideGooglePlay: false,
     links: [
-      { href: "/#features", title: "Features" },
       { href: "/#how-it-works", title: "How it works" },
-      { href: "/#pricing", title: "Pricing" },
       { href: "/#faq", title: "FAQ" },
     ],
   },
@@ -108,7 +104,7 @@ const templateConfig: TemplateConfig = {
       id: "how-it-works",
       title: "How it works",
       subtitle:
-        "Explore our comprehensive step-by-step guide to understand how our process ensures seamless and effective results",
+        "Explore our comprehensive step-by-step guide to understand how to operate the app and claim your giveaways with ease. Follow these simple instructions to get started and make the most out of our platform.",
       steps: [
         {
           title: "Install the App",
@@ -117,27 +113,15 @@ const templateConfig: TemplateConfig = {
           image: "/stock/01.webp",
         },
         {
-          title: "Create an Account",
-          subtitle:
-            "Sign up by entering your personal details and verifying your email to create a new account in just a few minutes.",
-          image: "/stock/02.webp",
-        },
-        {
-          title: "Set Up Your Profile",
-          subtitle:
-            "Complete your profile by adding necessary information and preferences to personalize your experience on the platform.",
-          image: "/stock/03.webp",
-        },
-        {
           title: "Explore Features",
           subtitle:
-            "Navigate through the app to discover various features and tools designed to enhance your productivity and engagement.",
+            "Navigate through the app to discover various giveaways and free games.",
           image: "/stock/04.webp",
         },
         {
-          title: "Connect with Others",
+          title: "Redeem your giveaways",
           subtitle:
-            "Start connecting with friends, colleagues, and like-minded individuals to expand your network and collaborate efficiently.",
+            "Follow the instructions provided in the app to redeem your giveaways and enjoy your free games.",
           image: "/stock/05.webp",
         },
       ],
@@ -179,43 +163,39 @@ const templateConfig: TemplateConfig = {
       title: "Frequently Asked Questions",
       qa: [
         {
-          question: "How can I create an account on your website?",
+          question: "What is Frapp?",
           answer:
-            "To create an account, click on the 'Sign Up' button located at the top right corner of our homepage. Fill in the required information, including your name, email address, and password. Once you submit the form, you will receive a confirmation email. Click the link in the email to verify your account, and you're all set!",
+            "Frapp is a specialized mobile app designed to help you build your game library for free. We track major digital storefronts and alert you the moment a paid game becomes available for free.",
         },
         {
-          question: "What payment methods do you accept?",
+          question: "Is Frapp actually free to use?",
           answer:
-            "We accept a variety of payment methods to ensure convenience for our customers. These include major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay. For more details, visit our Payments page.",
+            "Yes! Frapp is completely free to use. We do not charge any fees for accessing our services or receiving notifications about free game giveaways. Our goal is to help gamers expand their libraries without any cost.",
         },
         {
-          question: "How can I track my order?",
+          question: "Which platforms do you track?",
           answer:
-            "Once your order is shipped, you will receive an email with a tracking number. You can use this tracking number on our website under the 'Track Order' section to see the current status and estimated delivery date of your package.",
+            "We track major digital storefronts including Gog, itch.io, Epic Games, Steam, and more. Our app ensures you never miss out on the latest free game giveaways across these platforms.",
         },
         {
-          question: "What is your return policy?",
+          question: "Is it safe to install the APK?",
           answer:
-            "We offer a 30-day return policy for unused and unopened items. If you are not satisfied with your purchase, please contact our customer support team to initiate a return. Refunds will be processed within 7-10 business days after we receive the returned item.",
+            "Yes, it is safe to install the APK. We only distribute the official APK files from our website, and they are scanned for malware before being made available for download.",
         },
-        {
-          question: "How can I contact customer support?",
-          answer:
-            "You can contact our customer support team through the 'Contact Us' page on our website. We are available via email, phone, and live chat. Our support hours are Monday to Friday, 9 AM to 5 PM.",
-        },
+
       ],
     },
     header: {
-      headline: "Your Ultimate App for Every Need",
+      headline: "Your Ultimate App for Video game giveaways",
       subtitle:
-        "Streamline your tasks, boost your productivity, and accomplish more every day. Unlock a world of possibilities with our cutting-edge mobile application.",
+        "Frapp (freebie radar APP) is an app that enables you to get the latest video game giveaways as well as the latest free games. The app acts as a messenger as it dives into different sites such as Gog , itch.io, Epic games, Steam and so much more using the power of the gamepower API.",
       screenshots: [
-        "/screenshots/1.webp",
-        "/screenshots/2.webp",
         "/screenshots/3.webp",
+        "/screenshots/2.webp",
+        "/screenshots/1.webp",
       ],
-      rewards: ["App of the year \n 1st", "Product of the day"],
-      usersDescription: "100+ people already using the app",
+      rewards: ["Over a Thousand \n Downloads", "Open source"],
+      usersDescription: "1000+ people already using the app",
       headlineMark: [1, 3],
     },
     pricing: {
