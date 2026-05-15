@@ -24,9 +24,9 @@ const templateConfig: TemplateConfig = {
       privacyPolicy: true,
     },
     socials: {
-      instagram: "https://instagram.com/google",
-      facebook: "https://facebook.com/google",
-      twitter: "https://x.com/google",
+      instagram: "https://instagram.com/luh_bryxe",
+      facebook: "https://facebook.com/luh bryxe",
+      twitter: "https://x.com/brianali427",
     },
     links: [
       { href: "/#how-it-works", title: "How it works" },
@@ -47,7 +47,7 @@ const templateConfig: TemplateConfig = {
     id: "app-banner",
     title: "Download Our Mobile App Today!",
     subtitle:
-      "Unlock the full potential of our services with seamless access at your fingertips. Stay connected, informed, and in control wherever you are.",
+      "Experience the ultimate convenience and stay connected on the go with our feature-packed mobile app. Download now to enjoy seamless access to all our services right at your fingertips.",
     screenshots: [
       "/screenshots/1.webp",
       "/screenshots/2.webp",
@@ -56,8 +56,8 @@ const templateConfig: TemplateConfig = {
   },
   home: {
     seo: {
-      title: "Mobile App Landing Template",
-      description: "Mobile App Landing Template",
+      title: "Frapp - Your Ultimate App for Video game giveaways",
+      description: "Frapp (freebie radar APP) is an app that enables you to get the latest video game giveaways as well as the latest free games. The app acts as a messenger as it dives into different sites such as Gog , itch.io, Epic games, Steam and so much more using the power of the gamepower API.",
     },
     testimonials: {
       id: "testimonials",
@@ -241,11 +241,11 @@ const templateConfig: TemplateConfig = {
     },
     content: `# Privacy Policy
 
-**Effective Date:** [Insert Date]
+**Effective Date:** 5th of May, 2026
 
 ## Introduction
 
-Welcome to [Your App Name] (the "App"). [Your Company Name] ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you use our App.
+Welcome to Frapp  we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you use our App.
 
 ## Information We Collect
 
@@ -293,10 +293,8 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 
 If you have any questions or concerns about this Privacy Policy, please contact us at:
 
-[Your Company Name]  
-[Your Contact Information]  
-[Email Address]  
-[Phone Number (optional)]
+Frapp 
+brianali427@gmail.com
 
 `,
   },
@@ -307,11 +305,11 @@ If you have any questions or concerns about this Privacy Policy, please contact 
     },
     content: `# Cookies Policy
 
-**Effective Date:** [Insert Date]
+**Effective Date:** 5th of May, 2026
 
 ## Introduction
 
-This Cookies Policy explains how [Your Company Name] ("we," "our," or "us") uses cookies and similar technologies to recognize you when you visit our app, [Your App Name] (the "App"). It explains what these technologies are and why we use them, as well as your rights to control their use.
+This Cookies Policy explains how Frapp  uses cookies and similar technologies to recognize you when you visit our app, [Your App Name] (the "App"). It explains what these technologies are and why we use them, as well as your rights to control their use.
 
 ## What Are Cookies?
 
@@ -366,10 +364,9 @@ We may update this Cookies Policy from time to time. We will notify you of any c
 
 If you have any questions or concerns about our use of cookies, please contact us at:
 
-[Your Company Name]  
-[Your Contact Information]  
-[Email Address]  
-[Phone Number (optional)]
+Frapp
+brianali427@gmail.com
+
 `,
   },
   termsAndConditions: {
@@ -379,11 +376,11 @@ If you have any questions or concerns about our use of cookies, please contact u
     },
     content: `# Terms and Conditions
 
-**Effective Date:** [Insert Date]
+**Effective Date:** 5th of May, 2026
 
 ## Introduction
 
-Welcome to [Your App Name] (the "App"). These Terms and Conditions ("Terms") govern your use of the App provided by [Your Company Name] ("we," "our," or "us"). By accessing or using our App, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the App.
+Welcome to Frapp. These Terms and Conditions ("Terms") govern your use of the App provided by [Your Company Name] ("we," "our," or "us"). By accessing or using our App, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the App.
 
 ## Use of the App
 
@@ -443,10 +440,9 @@ We may update these Terms from time to time. We will notify you of any changes b
 
 If you have any questions or concerns about these Terms, please contact us at:
 
-[Your Company Name]  
-[Your Contact Information]  
-[Email Address]  
-[Phone Number (optional)]
+Frapp
+brianali427@gmail.com
+
 `,
   },
 };
