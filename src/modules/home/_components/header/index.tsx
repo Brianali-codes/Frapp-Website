@@ -6,9 +6,10 @@ import SVGWave from "./svg/wave";
 import SVGBlob from "./svg/blob";
 
 function Header() {
+  // Swapped out googlePlayLink and appStoreLink for githubLink and downloadLink
   const {
-    googlePlayLink,
-    appStoreLink,
+    githubLink,
+    downloadLink,
     home: { header, partners },
   } = useContext(ConfigContext)!;
 
@@ -16,6 +17,17 @@ function Header() {
   const { scrollYProgress } = useScroll({
     target: ref,
   });
+
+  // Reusable button animation variants matching your snappy UI physics
+  const buttonVariants = {
+    hover: { 
+      scale: 1.03,
+      transition: { type: "spring", stiffness: 400, damping: 10 }
+    },
+    tap: { 
+      scale: 0.97 
+    }
+  };
 
   return (
     <section id={header.id} className="relative pb-8 md:pb-4">
@@ -83,35 +95,35 @@ function Header() {
               >
                 {header.subtitle}
               </motion.p>
-              <motion.ul
+              
+              {/* Updated Action Buttons Group */}
+              <motion.div
                 initial={{ opacity: 0, y: "100%" }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="list-none flex gap-4 m-0 p-0"
+                className="flex flex-wrap gap-4 my-6 w-full justify-start not-prose"
               >
-                {googlePlayLink && (
-                  <li className="m-0 p-0">
-                    <a href={googlePlayLink}>
-                      <img
-                        className="h-14"
-                        alt="google play logo"
-                        src="/stores/google-play.svg"
-                      />
-                    </a>
-                  </li>
-                )}
-                {appStoreLink && (
-                  <li className="m-0 p-0">
-                    <a href={appStoreLink}>
-                      <img
-                        className="h-14"
-                        alt="app store logo"
-                        src="/stores/app-store.svg"
-                      />
-                    </a>
-                  </li>
-                )}
-              </motion.ul>
+                <motion.a 
+                  href={downloadLink || "https://github.com/Brianali-codes/Frapp/releases/download/Frappv1.1.0/Frappv1.1.0.apk"} 
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="px-6 h-12 flex items-center justify-center font-medium bg-primary text-primary-content rounded-btn shadow-md cursor-pointer select-none"
+                >
+                  Download Now
+                </motion.a>
+
+                <motion.a 
+                  href={githubLink || "https://github.com/Brianali-codes/Frapp"} 
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="px-6 h-12 flex items-center justify-center font-medium border border-base-content/20 hover:bg-base-content/5 text-base-content rounded-btn transition-colors cursor-pointer select-none"
+                >
+                  Open GitHub
+                </motion.a>
+              </motion.div>
+
               {header.usersDescription && (
                 <div className="not-prose flex items-center gap-2 my-1">
                   <ul className="avatar-group -space-x-4">

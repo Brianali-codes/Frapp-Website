@@ -6,8 +6,19 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 
 function AppBanner() {
-  const { googlePlayLink, appStoreLink, appBanner } =
+  const { githubLink, downloadLink, appBanner } =
     useContext(ConfigContext)!;
+
+  // Shared button animation configurations
+  const buttonVariants = {
+    hover: { 
+      scale: 1.03,
+      transition: { type: "spring", stiffness: 400, damping: 10 }
+    },
+    tap: { 
+      scale: 0.97 
+    }
+  };
 
   if (!appBanner) return null;
   return (
@@ -41,7 +52,7 @@ function AppBanner() {
               initial={{ opacity: 0, y: "-100%" }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mt-0 mb-4 text-4xl md:text-6xl"
+              className="mt-0 mb-4 text-4xl md:text-6xl w-full text-left"
             >
               {appBanner.title}
             </motion.h2>
@@ -49,39 +60,40 @@ function AppBanner() {
               initial={{ opacity: 0, y: "100%" }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-primary-content/70 whitespace-pre-wrap text-left m-0 mt-1 md:text-lg"
+              className="text-primary-content/70 whitespace-pre-wrap text-left m-0 mt-1 md:text-lg w-full"
             >
               {appBanner.subtitle}
             </motion.p>
-            <motion.ul
+            
+            {/* Animated Button Group Container */}
+            <motion.div
               initial={{ opacity: 0, y: "100%" }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="list-none flex gap-4 my-6 p-0 w-full"
+              className="flex flex-wrap gap-4 my-6 w-full justify-start"
             >
-              {googlePlayLink && (
-                <li className="m-0 p-0">
-                  <a href={googlePlayLink}>
-                    <img
-                      className="h-14"
-                      alt="google play logo"
-                      src="/stores/google-play.svg"
-                    />
-                  </a>
-                </li>
-              )}
-              {appStoreLink && (
-                <li className="m-0 p-0">
-                  <a href={appStoreLink}>
-                    <img
-                      className="h-14"
-                      alt="app store logo"
-                      src="/stores/app-store.svg"
-                    />
-                  </a>
-                </li>
-              )}
-            </motion.ul>
+              {/* Download Now Button */}
+              <motion.a 
+                href={downloadLink || "https://github.com/Brianali-codes/Frapp/releases/download/Frappv1.1.0/Frappv1.1.0.apk"} 
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="px-6 h-12 flex items-center justify-center font-medium bg-primary-content text-primary rounded-btn shadow-md cursor-pointer select-none"
+              >
+                Download Now
+              </motion.a>
+
+              {/* Open GitHub Button */}
+              <motion.a 
+                href={githubLink || "https://github.com/Brianali-codes/Frapp"} 
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="px-6 h-12 flex items-center justify-center font-medium border border-primary-content/30 hover:bg-primary-content/10 rounded-btn transition-colors cursor-pointer select-none"
+              >
+                Open GitHub
+              </motion.a>
+            </motion.div>
           </div>
           <motion.div
             initial="hidden"
