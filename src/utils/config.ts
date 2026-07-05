@@ -56,8 +56,8 @@ const templateConfig: TemplateConfig = {
   },
   home: {
     seo: {
-      title: "Frapp - Your Ultimate App for Video game giveaways",
-      description: "Frapp (freebie radar APP) is an app that enables you to get the latest video game giveaways as well as the latest free games. The app acts as a messenger as it dives into different sites such as Gog , itch.io, Epic games, Steam and so much more using the power of the gamepower API.",
+      title: "Frapp - Your Ultimate App for Video game giveaways And Video Game Deals",
+      description: "FRAPP (Freebie Radar App) is a clean, open-source utility aggregating the latest video game giveaways and premium game deals from Steam, Epic Games, GOG, and more, powered by the GamerPower and CheapShark APIs.",
     },
     testimonials: {
       id: "testimonials",
@@ -186,16 +186,16 @@ const templateConfig: TemplateConfig = {
       ],
     },
     header: {
-      headline: "Your Ultimate App for Video game giveaways",
+      headline: "Your Ultimate App for Video game Deals And Giveaways",
       subtitle:
-        "Frapp (freebie radar APP) is an app that enables you to get the latest video game giveaways as well as the latest free games. The app acts as a messenger as it dives into different sites such as Gog , itch.io, Epic games, Steam and so much more using the power of the gamepower API.",
+        "FRAPP (Freebie Radar App) is a clean, open-source utility aggregating the latest video game giveaways and premium game deals from Steam, Epic Games, GOG, and more, powered by the GamerPower and CheapShark APIs.",
       screenshots: [
         "/screenshots/3.webp",
         "/screenshots/2.webp",
         "/screenshots/1.webp",
       ],
-      rewards: ["Over a Thousand \n Downloads", "Open source"],
-      usersDescription: "1000+ people already using the app",
+      rewards: ["Over Two Thousand \n Downloads", "Open source"],
+      usersDescription: "2000+ Downloads",
       headlineMark: [1, 3],
     },
     pricing: {
