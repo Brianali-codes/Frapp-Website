@@ -3,8 +3,8 @@ import type { TemplateConfig } from "./configType";
 const templateConfig: TemplateConfig = {
   name: "FRAPP",
   seo: {
-    title: "Frapp",
-    description: "Get videogame giveaways with Frapp",
+    title: "Frapp - Video Game Giveaways & Gaming Deals Tracker",
+    description: "Get premium videogame giveaways and tracking tools with Frapp.",
   },
   // Draws grid behind main container
   backgroundGrid: false,
@@ -25,7 +25,7 @@ const templateConfig: TemplateConfig = {
     },
     socials: {
       instagram: "https://instagram.com/luh_bryxe",
-      facebook: "https://facebook.com/luh bryxe",
+      facebook: "https://facebook.com/luh%20bryxe",
       twitter: "https://x.com/brianali427",
     },
     links: [
@@ -45,9 +45,9 @@ const templateConfig: TemplateConfig = {
   },
   appBanner: {
     id: "app-banner",
-    title: "Download Our Mobile App Today!",
+    title: "Download Frapp Mobile Today!",
     subtitle:
-      "Experience the ultimate convenience and stay connected on the go with our feature-packed mobile app. Download now to enjoy seamless access to all our services right at your fingertips.",
+      "Experience the ultimate convenience and never miss a free gaming title again. Download now to enjoy seamless access to all our aggregated game deals right at your fingertips.",
     screenshots: [
       "/screenshots/1.webp",
       "/screenshots/2.webp",
@@ -128,32 +128,32 @@ const templateConfig: TemplateConfig = {
     },
     features: {
       id: "features",
-      title: "Transform Your Daily Routine",
+      title: "Never Pay Full Price For Games Again",
       subtitle:
-        "Elevate your lifestyle with our innovative mobile app, designed for seamless living",
+        "Track every storefront, secure global platform listings, and stack up your gaming library on the go.",
       cards: [
         {
-          title: "Seamless Integration",
+          title: "Multi-Storefront Tracking",
           subtitle:
-            "Connect effortlessly with all your devices, ensuring smooth and efficient workflows across different platforms and applications without any disruptions",
+            "Connect effortlessly with active databases across Steam, Epic Games Store, GOG, and Itch.io without parsing through individual forums yourself.",
           icon: "/3D/link-front-color.webp",
         },
         {
-          title: "24/7 Customer Support",
+          title: "Real-Time Deal Radars",
           subtitle:
-            "Get assistance whenever you need it with our dedicated customer support team, available around the clock to help resolve any issues you may encounter",
+            "Get instant updates whenever premium indie hits or AAA blockbusters experience flash price drops or limited-time free redemption windows.",
           icon: "/3D/clock-front-color.webp",
         },
         {
-          title: "Intuitive Design",
+          title: "Clean API Aggregation",
           subtitle:
-            "Navigate through our intuitive and easy-to-use interface designed to enhance user experience, making it accessible for users of all skill levels",
+            "Powered continuously by reliable data streams from GamerPower and CheapShark APIs to bring you validated, spam-free discount links.",
           icon: "/3D/roll-brush-front-color.webp",
         },
         {
-          title: "Top-Notch Security",
+          title: "100% Safe Verification",
           subtitle:
-            "Protect your data with our top-notch security protocols, offering robust encryption and real-time monitoring to keep your information safe and secure",
+            "Our open-source framework guarantees absolute security. Track and claim free game distributions with structural safety rules built in.",
           icon: "/3D/sheild-front-color.webp",
         },
       ],
@@ -182,7 +182,6 @@ const templateConfig: TemplateConfig = {
           answer:
             "Yes, it is safe to install the APK. We only distribute the official APK files from our website, and they are scanned for malware before being made available for download.",
         },
-
       ],
     },
     header: {
@@ -200,35 +199,19 @@ const templateConfig: TemplateConfig = {
     },
     pricing: {
       id: "pricing",
-      title: "Pricing",
-      subtitle: "Flexible costs to meet your budget",
+      title: "Pricing Plans",
+      subtitle: "Frapp is an open-source project dedicated to keeping gaming accessible.",
       actionText: "Download the app",
       plans: [
         {
-          title: "Basic Plan",
-          price: "$9.99/month",
-          rows: ["Access to basic features", "Email support", "1 GB storage"],
-        },
-        {
-          title: "Standard Plan",
-          price: "$19.99/month",
+          title: "Community Free Edition",
+          price: "$0/forever",
           featured: true,
           rows: [
-            "Access to all basic features",
-            "Priority email support",
-            "10 GB storage",
-            "Monthly webinars",
-          ],
-        },
-        {
-          title: "Premium Plan",
-          price: "$29.99/month",
-          rows: [
-            "Access to all features",
-            "24/7 support",
-            "100 GB storage",
-            "Weekly webinars",
-            "Exclusive content",
+            "Access to all basic & advanced features",
+            "Real-time notifications for giveaways",
+            "Full Steam, GOG, & Epic Games tracking",
+            "100% open-source visibility",
           ],
         },
       ],
@@ -236,8 +219,8 @@ const templateConfig: TemplateConfig = {
   },
   privacyPolicy: {
     seo: {
-      title: "Privacy Policy - Mobile App Landing Template",
-      description: "Privacy Policy",
+      title: "Privacy Policy - Frapp Game Tracker",
+      description: "Privacy Policy statements and data collection outlines for the Frapp platform.",
     },
     content: `# Privacy Policy
 
@@ -245,7 +228,7 @@ const templateConfig: TemplateConfig = {
 
 ## Introduction
 
-Welcome to Frapp  we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you use our App.
+Welcome to Frapp. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you use our App.
 
 ## Information We Collect
 
@@ -278,7 +261,7 @@ We do not share your personal information with third parties except in the follo
 ## Your Rights and Choices
 
 - **Access and Correction:** You have the right to access and correct the personal information we hold about you.
-- **Data Deletion:** You may request that we delete your personal information by contacting us at [Your Contact Information].
+- **Data Deletion:** You may request that we delete your personal information by contacting us directly.
 - **Opt-Out:** You may opt out of receiving promotional communications from us by following the instructions in those communications.
 
 ## Security
@@ -300,8 +283,8 @@ brianali427@gmail.com
   },
   cookiesPolicy: {
     seo: {
-      title: "Cookies Policy - Mobile App Landing Template",
-      description: "Cookies Policy",
+      title: "Cookies Policy - Frapp Game Tracker",
+      description: "Cookies Policy management details for Frapp visitors.",
     },
     content: `# Cookies Policy
 
@@ -309,7 +292,7 @@ brianali427@gmail.com
 
 ## Introduction
 
-This Cookies Policy explains how Frapp  uses cookies and similar technologies to recognize you when you visit our app, [Your App Name] (the "App"). It explains what these technologies are and why we use them, as well as your rights to control their use.
+This Cookies Policy explains how Frapp uses cookies and similar technologies to recognize you when you visit our application. It explains what these technologies are and why we use them, as well as your rights to control their use.
 
 ## What Are Cookies?
 
@@ -319,17 +302,13 @@ Cookies are small data files that are placed on your device when you visit a web
 
 We use the following types of cookies in our App:
 
-1. **Strictly Necessary Cookies:**  
-   These cookies are essential for you to use some of the features of our App. Without these cookies, some services cannot be provided.
+1. **Strictly Necessary Cookies:** These cookies are essential for you to use some of the features of our App. Without these cookies, some services cannot be provided.
 
-2. **Performance and Analytics Cookies:**  
-   These cookies collect information about how users interact with our App, including which pages are visited most often. We use this information to improve how our App works.
+2. **Performance and Analytics Cookies:** These cookies collect information about how users interact with our App, including which pages are visited most often. We use this information to improve how our App works.
 
-3. **Functionality Cookies:**  
-   These cookies allow our App to remember choices you make when you use the App, such as remembering your login details or language preference.
+3. **Functionality Cookies:** These cookies allow our App to remember choices you make when you use the App, such as remembering your login details or language preference.
 
-4. **Targeting and Advertising Cookies:**  
-   These cookies are used to deliver advertisements that are relevant to you. They also limit the number of times you see an ad and help measure the effectiveness of advertising campaigns.
+4. **Targeting and Advertising Cookies:** These cookies are used to deliver advertisements that are relevant to you. They also limit the number of times you see an ad and help measure the effectiveness of advertising campaigns.
 
 ### Cookies From Third Parties
 
@@ -371,8 +350,8 @@ brianali427@gmail.com
   },
   termsAndConditions: {
     seo: {
-      title: "Terms and conditions - Mobile App Landing Template",
-      description: "Terms and conditions",
+      title: "Terms and conditions - Frapp Game Tracker",
+      description: "Terms and conditions of service for using the Frapp mobile application.",
     },
     content: `# Terms and Conditions
 
@@ -380,12 +359,12 @@ brianali427@gmail.com
 
 ## Introduction
 
-Welcome to Frapp. These Terms and Conditions ("Terms") govern your use of the App provided by [Your Company Name] ("we," "our," or "us"). By accessing or using our App, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the App.
+Welcome to Frapp. These Terms and Conditions ("Terms") govern your use of the App provided by Frapp ("we," "our," or "us"). By accessing or using our App, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the App.
 
 ## Use of the App
 
 ### 1. Eligibility
-To use our App, you must be at least [Insert Age] years old and capable of entering into a legally binding agreement. By using the App, you represent and warrant that you meet these eligibility requirements.
+To use our App, you must be at least 13 years old and capable of entering into a legally binding agreement. By using the App, you represent and warrant that you meet these eligibility requirements.
 
 ### 2. User Accounts
 - **Registration:** You may be required to create an account to access certain features of the App. You must provide accurate and complete information when creating your account.
@@ -402,7 +381,7 @@ You agree not to:
 ## Intellectual Property
 
 ### 1. Ownership
-All content and materials available on the App, including but not limited to text, graphics, logos, and software, are the property of [Your Company Name] or its licensors and are protected by intellectual property laws.
+All content and materials available on the App, including but not limited to text, graphics, logos, and software, are the property of Frapp or its licensors and are protected by intellectual property laws.
 
 ### 2. License
 We grant you a limited, non-exclusive, non-transferable license to access and use the App for your personal, non-commercial use. This license is subject to your compliance with these Terms.
@@ -418,7 +397,7 @@ You may not:
 The App is provided on an "as is" and "as available" basis. We make no warranties or representations about the accuracy or completeness of the content available on or through the App. We disclaim all warranties, whether express or implied, including any warranties of merchantability, fitness for a particular purpose, and non-infringement.
 
 ### 2. Limitation of Liability
-To the fullest extent permitted by law, [Your Company Name] shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from:
+To the fullest extent permitted by law, Frapp shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from:
 - Your use or inability to use the App;
 - Any unauthorized access to or use of our servers and/or any personal information stored therein;
 - Any bugs, viruses, or other harmful code that may be transmitted to or through the App;
@@ -426,11 +405,11 @@ To the fullest extent permitted by law, [Your Company Name] shall not be liable 
 
 ## Indemnification
 
-You agree to indemnify, defend, and hold harmless [Your Company Name], its affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable legal and accounting fees, arising out of or in any way connected with your access to or use of the App or your violation of these Terms.
+You agree to indemnify, defend, and hold harmless Frapp, its affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable legal and accounting fees, arising out of or in any way connected with your access to or use of the App or your violation of these Terms.
 
 ## Governing Law
 
-These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law principles. You agree to submit to the exclusive jurisdiction of the courts located in [Your Jurisdiction] to resolve any legal matter arising from these Terms.
+These Terms shall be governed by and construed in accordance with standard digital property provisions, without regard to conflict of law principles. You agree to submit to the exclusive jurisdiction of applicable regional courts to resolve any legal matter arising from these Terms.
 
 ## Changes to These Terms
 

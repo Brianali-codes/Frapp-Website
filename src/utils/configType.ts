@@ -77,6 +77,8 @@ export type TemplateConfig = {
             screenshots: string[];
             rewards?: string[] | undefined;
             usersDescription?: string | undefined;
+            githubLink?: string | undefined;
+            downloadLink?: string | undefined;
         };
         testimonials?: {
             id?: string | undefined;
