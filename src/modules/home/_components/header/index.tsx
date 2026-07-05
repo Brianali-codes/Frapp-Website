@@ -7,7 +7,7 @@ import SVGBlob from "./svg/blob";
 
 
 function Header() {
-  // Swapped out googlePlayLink and appStoreLink for githubLink and downloadLink
+  
   const {
     githubLink,
     downloadLink,

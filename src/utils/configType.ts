@@ -62,6 +62,8 @@ export type TemplateConfig = {
         id?: string | undefined;
         title: string;
         subtitle: string;
+        githubLink?: string | undefined;
+        downloadLink?: string | undefined;
         screenshots: string[];
     } | undefined;
     home: {
