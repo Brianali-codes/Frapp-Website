@@ -105,7 +105,7 @@ function Header() {
                 className="flex flex-wrap gap-4 my-6 w-full justify-start not-prose"
               >
                 <motion.a 
-                  href={downloadLink || "https://github.com/Brianali-codes/Frapp/releases/download/v1.1.3/frappv1.1.2.apk"} 
+                  href={downloadLink || "https://github.com/Brianali-codes/Frapp/releases/download/v1.1.3/frappv1.1.3.apk"} 
                   variants={buttonVariants}
                   whileHover="hover"
                   whileTap="tap"
@@ -175,22 +175,25 @@ function Header() {
                 }}
                 className="relative h-[548px] 2xs:h-[720px] sm:h-[648px] md:h-[548px] rounded-[3rem]"
               >
-                <div className="absolute top-2.5 left-3 w-[calc(100%-24px)] h-[calc(100%-16px)] rounded-[1rem] 2xs:rounded-[2rem] overflow-hidden">
-                  {header.screenshots.map((src, index) => (
-                    <SingleScreenshot
-                      key={src}
-                      src={src}
-                      scrollYProgress={scrollYProgress}
-                      index={index}
-                      totalCount={header.screenshots.length}
-                    />
-                  ))}
-                </div>
-                <img
-                  src="/misc/iphone-frame.webp"
-                  alt="iphone-frame"
-                  className="relative z-10 h-full"
-                />
+                {/* Screenshot Container */}
+              <div className="absolute inset-1 top-3 z-0 overflow-hidden">
+                {header.screenshots.map((src, index) => (
+                  <SingleScreenshot
+                    key={src}
+                    src={src}
+                    scrollYProgress={scrollYProgress}
+                    index={index}
+                    totalCount={header.screenshots.length}
+                  />
+                ))}
+              </div>
+
+              {/* Phone Frame Overlay */}
+              <img
+                src="/misc/iphone-frame.png"
+                alt="iphone-frame"
+                className="relative z-10 h-full w-full object-contain pointer-events-none"
+              />
               </motion.div>
             </div>
           </div>
