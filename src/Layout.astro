@@ -3,17 +3,17 @@ import "swiper/css";
 import "@styles/styles.scss";
 import type { TemplateConfig } from "utils/configType";
 
-const { backgroundGrid, seo, logo, theme, forceTheme } =
-  Astro.props as TemplateConfig;
+const { backgroundGrid, seo, logo, theme, forceTheme } = Astro.props as TemplateConfig;
 ---
 
 <!doctype html>
 <html lang="en" data-theme={theme}>
-  <link rel="sitemap" href="/sitemap-index.xml" />
+  <head>
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
@@ -26,27 +26,30 @@ const { backgroundGrid, seo, logo, theme, forceTheme } =
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={seo.title} />
     <meta property="og:description" content={seo.description} />
-    <meta property="og:image" content={new URL(logo, Astro.url)} />
+    <meta property="og:image" content={new URL(logo, Astro.url).toString()} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={seo.title} />
     <meta property="twitter:description" content={seo.description} />
-    <meta property="twitter:image" content={new URL(logo, Astro.url)} />
+    <meta property="twitter:image" content={new URL(logo, Astro.url).toString()} />
 
+    <!-- Theme Initialization Script -->
     <script is:inline define:vars={{ forceTheme }}>
       function getPreferredColorScheme() {
-        if (!window.matchMedia) {
-          return;
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
           return "dark";
         }
+        return "light"; // Return a safe fallback fallback instead of undefined
       }
-      const theme = localStorage.getItem("theme") ?? getPreferredColorScheme();
-      if (theme === "dark" && !forceTheme)
+      
+      // Prioritize explicit property fallback, then localStorage, then system preference
+      const theme = forceTheme || localStorage.getItem("theme") || getPreferredColorScheme();
+      
+      if (theme) {
         document.documentElement.setAttribute("data-theme", theme);
+      }
     </script>
   </head>
   <body class="relative">

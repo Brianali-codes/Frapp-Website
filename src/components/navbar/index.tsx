@@ -54,7 +54,7 @@ function Navbar() {
         />
         <div className="navbar-start">
           <a href="/" className="flex items-center">
-            <img className="h-16" src={logo} alt="logo" />
+            <img className="h-10" src={logo} alt="logo" />
             <span className="font-bold mx-1 md:text-lg">{name}</span>
           </a>
         </div>
