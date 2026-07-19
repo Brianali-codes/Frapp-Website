@@ -80,7 +80,7 @@ function Navbar() {
             ))}
           </ul>
           {topNavbar.cta && (
-            <a href="/app" className="ml-3 btn btn-primary btn-outline py-4">
+            <a href="https://github.com/Brianali-codes/Frapp/releases/download/v1.1.3/frappv1.1.3.apk" className="ml-3 btn btn-primary btn-outline py-4">
               {topNavbar.cta}
             </a>
           )}
@@ -104,28 +104,11 @@ function Navbar() {
             {title}
           </motion.a>
         ))}
-        <motion.ul
-          variants={{
-            show: { opacity: 1, y: 0 },
-            hidden: { opacity: 0, y: "100%" },
-          }}
-          className="menu menu-horizontal justify-center py-0 px-1"
-        >
-          {googlePlayLink && (
-            <li className="mb-2">
-              <a href={googlePlayLink} target="_blank">
-                <img className="h-12" src="/stores/google-play.svg" />
-              </a>
-            </li>
+         {topNavbar.cta && (
+            <a href="https://github.com/Brianali-codes/Frapp/releases/download/v1.1.3/frappv1.1.3.apk" className="ml-3 btn btn-primary btn-outline py-4">
+              {topNavbar.cta}
+            </a>
           )}
-          {appStoreLink && (
-            <li className="mb-2">
-              <a href={appStoreLink} target="_blank">
-                <img className="h-12" src="/stores/app-store.svg" />
-              </a>
-            </li>
-          )}
-        </motion.ul>
       </AnimatedList>
     </motion.nav>
   );

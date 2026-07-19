@@ -34,12 +34,13 @@ const templateConfig: TemplateConfig = {
     ],
   },
   topNavbar: {
-    cta: "Get the app",
+    cta: "Get Frapp",
     disableWidthAnimation: false,
     hideAppStore: false,
     hideGooglePlay: false,
     links: [
       { href: "/#how-it-works", title: "How it works" },
+      { href: "/#features", title: "Features" },
       { href: "/#faq", title: "FAQ" },
     ],
   },
@@ -127,37 +128,37 @@ const templateConfig: TemplateConfig = {
       ],
     },
     features: {
-      id: "features",
-      title: "Never Pay Full Price For Games Again",
+  id: "features",
+  title: "Never Pay Full Price For Games Again",
+  subtitle:
+    "Track storefronts, grab giveaways instantly, and stack up your gaming library on a sleek, community-driven interface.",
+  cards: [
+    {
+      title: "Giveaways & Deals Tracker",
       subtitle:
-        "Track every storefront, secure global platform listings, and stack up your gaming library on the go.",
-      cards: [
-        {
-          title: "Multi-Storefront Tracking",
-          subtitle:
-            "Connect effortlessly with active databases across Steam, Epic Games Store, GOG, and Itch.io without parsing through individual forums yourself.",
-          icon: "/3D/link-front-color.webp",
-        },
-        {
-          title: "Real-Time Deal Radars",
-          subtitle:
-            "Get instant updates whenever premium indie hits or AAA blockbusters experience flash price drops or limited-time free redemption windows.",
-          icon: "/3D/clock-front-color.webp",
-        },
-        {
-          title: "Clean API Aggregation",
-          subtitle:
-            "Powered continuously by reliable data streams from GamerPower and CheapShark APIs to bring you validated, spam-free discount links.",
-          icon: "/3D/roll-brush-front-color.webp",
-        },
-        {
-          title: "100% Safe Verification",
-          subtitle:
-            "Our open-source framework guarantees absolute security. Track and claim free game distributions with structural safety rules built in.",
-          icon: "/3D/sheild-front-color.webp",
-        },
-      ],
+        "Claim free game giveaways the moment stores avail them, and jump on top-tier game deals as soon as prices update across global platforms.",
+      icon: "/3D/link-front-color.webp",
     },
+    {
+      title: "Smart Filters & Favorites",
+      subtitle:
+        "Filter down your feed cleanly by specific Store or Platform, and favorite individual deals to keep a close eye on their ongoing price and availability.",
+      icon: "/3D/roll-brush-front-color.webp",
+    },
+    {
+      title: "Instant Alerts",
+      subtitle:
+        "No daily spam or scheduled cycles. Receive direct background reminder notifications exclusively when a brand-new free game giveaway drops.",
+      icon: "/3D/clock-front-color.webp",
+    },
+    {
+      title: "Privacy First, Zero Ads",
+      subtitle:
+        "Enjoy absolute digital safety. A serverless architecture means complete data privacy, paired with zero ads, zero trackers, and built-in bug reporting.",
+      icon: "/3D/sheild-front-color.webp",
+    },
+  ],
+},
     faq: {
       id: "faq",
       title: "Frequently Asked Questions",

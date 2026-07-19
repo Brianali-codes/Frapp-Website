@@ -21,9 +21,11 @@ function Home({ config }: Props) {
       <main>
         <Navbar />
         <Header />
+        <Features />
         <HowItWorks />
         <Faq />
         <AppBanner />
+        
         <Footer />
       </main>
     </ConfigContext.Provider>
