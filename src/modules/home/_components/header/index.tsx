@@ -5,9 +5,7 @@ import SingleScreenshot from "./singleScreenshot";
 import SVGWave from "./svg/wave";
 import SVGBlob from "./svg/blob";
 
-
 function Header() {
-  
   const {
     githubLink,
     downloadLink,
@@ -173,27 +171,31 @@ function Header() {
                   duration: 0.5,
                   delay: 0.3,
                 }}
-                className="relative h-[548px] 2xs:h-[720px] sm:h-[648px] md:h-[548px] rounded-[3rem]"
+                /* Samsung S25 Ultra Boxy Squircle Frame Casing */
+                className="relative mx-auto h-[598px] w-[290px] rounded-[24px] bg-slate-900 p-2 shadow-2xl ring-1 ring-slate-800/80"
               >
-                {/* Screenshot Container */}
-              <div className="absolute inset-1 top-3 z-0 overflow-hidden">
-                {header.screenshots.map((src, index) => (
-                  <SingleScreenshot
-                    key={src}
-                    src={src}
-                    scrollYProgress={scrollYProgress}
-                    index={index}
-                    totalCount={header.screenshots.length}
-                  />
-                ))}
-              </div>
+                {/* Inner Screen Surface */}
+                <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[18px] bg-black">
+                  
+                  {/* Punch-hole Camera */}
+                  <div className="absolute top-2.5 left-1/2 z-30 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-950 ring-1 ring-slate-800" />
 
-              {/* Phone Frame Overlay */}
-              <img
-                src="/misc/iphone-frame.png"
-                alt="iphone-frame"
-                className="relative z-10 h-full w-full object-contain pointer-events-none"
-              />
+                  {/* Screenshots Container - Ensures full image fits via object-contain styling */}
+                  <div className="relative h-full w-full [&_img]:h-full [&_img]:w-full [&_img]:object-contain">
+                    {header.screenshots.map((src, index) => (
+                      <SingleScreenshot
+                        key={src}
+                        src={src}
+                        scrollYProgress={scrollYProgress}
+                        index={index}
+                        totalCount={header.screenshots.length}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Android Navigation Bar (Bottom Gesture Bar) */}
+                  <div className="absolute bottom-1.5 left-1/2 z-30 h-1 w-24 -translate-x-1/2 rounded-full bg-white/40 backdrop-blur-sm" />
+                </div>
               </motion.div>
             </div>
           </div>

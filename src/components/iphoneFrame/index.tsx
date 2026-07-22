@@ -1,30 +1,31 @@
 interface Props {
   src: string;
+  alt?: string;
 }
 
-function IphoneFrame({ src }: Props) {
+function AndroidFrame({ src, alt = "App screenshot" }: Props) {
   return (
-    // We relative position the container to act as a anchor for the absolute image
-    <div className="relative h-full overflow-hidden">
-      {/* 
-         Fixed Inner Screen Container:
-         - Using inset-0 makes the div cover the entire area of the container.
-         - object-fit: fill forces the content to stretch to the frame's specific aspect ratio.
-      */}
-      <img
-        src={src}
-        alt="screenshot"
-        className="absolute inset-1 z-10 h-full w-full object-fill"
-      />
+    /* Outer Frame Container - Samsung S25 Ultra boxy squircle styling */
+    <div className="relative mx-auto h-[598px] w-[290px] rounded-[24px] bg-slate-900 p-2 shadow-2xl ring-1 ring-slate-800/80">
+      
+      {/* Inner Screen Container */}
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[18px] bg-black">
+        
+        {/* Punch-hole Camera */}
+        <div className="absolute top-2.5 left-1/2 z-30 h-3 w-3 -translate-x-1/2 rounded-full bg-slate-950 ring-1 ring-slate-800" />
 
-      {/* Frame (Should have a transparent background/screen cutout for this approach to work) */}
-      <img
-        src="/misc/iphone-frame.png"
-        alt="iphone-frame"
-        className="relative z-20 h-full w-full"
-      />
+        {/* Screenshot Image - object-contain ensures full image visibility */}
+        <img
+          src={src}
+          alt={alt}
+          className="h-full w-full object-contain"
+        />
+
+        {/* Android Navigation Bar (Bottom Gesture Bar) */}
+        <div className="absolute bottom-1.5 left-1/2 z-30 h-1 w-24 -translate-x-1/2 rounded-full bg-white/40 backdrop-blur-sm" />
+      </div>
     </div>
   );
 }
 
-export default IphoneFrame;
+export default AndroidFrame;
