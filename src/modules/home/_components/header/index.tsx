@@ -34,7 +34,9 @@ function Header() {
         <div className="flex flex-col md:flex-row">
           <div className="flex flex-1 items-center md:items-start md:h-[300vh]">
             <div className="static top-40 flex flex-col prose justify-center py-8 md:sticky md:h-[548px]">
-              <div className="flex flex-col gap-2 my-4 3xs:flex-row">
+              
+              {/* Rewards / Badges Section */}
+              <div className="flex flex-col gap-2 my-4 3xs:flex-row flex-wrap">
                 {header.rewards?.map((reward, index) => (
                   <motion.div
                     key={index}
@@ -42,14 +44,30 @@ function Header() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="flex items-center self-center h-8 md:h-12"
                   >
-                    <img src="/misc/wreath-left.webp" className="h-full" />
-                    <p className="text-xs text-gray-500 whitespace-pre text-center">
-                      {reward}
-                    </p>
-                    <img src="/misc/wreath-right.webp" className="h-full" />
+                    <img src="/misc/wreath-left.webp" className="h-full" alt="wreath left" />
+                    
+                    {index === 0 ? (
+                      /* First Badge: Live GitHub Downloads Shield */
+                      <a
+                        href={githubLink || "https://github.com/brianali-codes/frapp"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-gray-500 no-underline whitespace-pre text-center m-0 px-1"
+                      >
+                        {reward}
+                      </a>
+                    ) : (
+                      /* Subsequent Badges: Original Config Text */
+                      <p className="text-xs text-gray-500 whitespace-pre text-center m-0 px-1">
+                        {reward}
+                      </p>
+                    )}
+
+                    <img src="/misc/wreath-right.webp" className="h-full" alt="wreath right" />
                   </motion.div>
                 ))}
               </div>
+
               <motion.h2
                 initial={{ opacity: 0, rotateZ: -10 }}
                 animate={{ opacity: 1, rotateZ: 0 }}
@@ -86,6 +104,7 @@ function Header() {
                   header.headline
                 )}
               </motion.h2>
+
               <motion.p
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 0.7, x: 0 }}
@@ -95,7 +114,7 @@ function Header() {
                 {header.subtitle}
               </motion.p>
               
-              {/* Updated Action Buttons Group */}
+              {/* Action Buttons Group */}
               <motion.div
                 initial={{ opacity: 0, y: "100%" }}
                 animate={{ opacity: 1, y: 0 }}
@@ -149,7 +168,11 @@ function Header() {
                     animate={{ scale: 1, opacity: 1, y: 0 }}
                     transition={{ delay: 1.1 }}
                   >
-                    {header.usersDescription}
+                    <img
+                          src="https://img.shields.io/github/downloads/brianali-codes/frapp/total.svg"
+                          alt="Github All Releases"
+                          className="m-0 h-5"
+                        />
                   </motion.p>
                 </div>
               )}
