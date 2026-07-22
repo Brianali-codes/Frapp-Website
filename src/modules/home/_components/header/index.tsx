@@ -195,7 +195,7 @@ function Header() {
                   delay: 0.3,
                 }}
                 /* Samsung S25 Ultra Boxy Squircle Frame Casing */
-                className="relative mx-auto h-[598px] w-[290px] rounded-[24px] bg-slate-900 p-2 shadow-2xl ring-1 ring-slate-800/80"
+                className="relative mx-auto h-[598px] w-[290px] rounded-[20px] bg-slate-900 p-2 shadow-2xl ring-1 ring-slate-800/80"
               >
                 {/* Inner Screen Surface */}
                 <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[18px] bg-black">
