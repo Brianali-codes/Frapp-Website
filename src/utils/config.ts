@@ -50,9 +50,9 @@ const templateConfig: TemplateConfig = {
     subtitle:
       "Experience the ultimate convenience and never miss a free gaming title again. Download now to enjoy seamless access to all our aggregated game deals right at your fingertips.",
     screenshots: [
-      "/screenshots/1.webp",
-      "/screenshots/2.webp",
-      "/screenshots/3.webp",
+      "/screenshots/5.webp",
+      "/screenshots/4.webp",
+      "/screenshots/7.webp",
     ],
   },
   home: {
@@ -190,9 +190,9 @@ const templateConfig: TemplateConfig = {
       subtitle:
         "FRAPP (Freebie Radar App) is a clean, open-source utility aggregating the latest video game giveaways and premium game deals from Steam, Epic Games, GOG, and more, powered by the GamerPower and CheapShark APIs.",
       screenshots: [
-        "/screenshots/3.webp",
-        "/screenshots/2.webp",
-        "/screenshots/1.webp",
+        "/screenshots/7.webp",
+        "/screenshots/4.webp",
+        "/screenshots/5.webp",
       ],
       rewards: ["Over Two Thousand \n Downloads", "Open source"],
       usersDescription: "2000+ Downloads",
