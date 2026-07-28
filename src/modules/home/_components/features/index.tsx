@@ -1,11 +1,10 @@
 import AnimatedText from "../../../../components/animatedText";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef, useCallback } from "react";
 import { ConfigContext } from "../../../../utils/configContext";
 import AndroidFrame from "../../../../components/iphoneFrame";
 
-// Features configuration array for the phone carousel
 const APP_CAROUSEL_FEATURES = [
   {
     title: "Claim Game Giveaways",
@@ -39,122 +38,98 @@ const APP_CAROUSEL_FEATURES = [
   },
 ];
 
+const AUTO_SCROLL_INTERVAL = 3000; // Time in ms (4 seconds)
+
 function Features() {
-  const {
-    home: { features },
-  } = useContext(ConfigContext)!;
+  const { home: { features } } = useContext(ConfigContext)!;
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  if (!features) return null;
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const [isPaused, setIsPaused] = useState(false);
 
   const totalFeatures = APP_CAROUSEL_FEATURES.length;
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
+    setDirection("next");
     setCurrentIndex((prev) => (prev + 1) % totalFeatures);
-  };
+  }, [totalFeatures]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
+    setDirection("prev");
     setCurrentIndex((prev) => (prev - 1 + totalFeatures) % totalFeatures);
+  }, [totalFeatures]);
+
+  const handleSelectIndex = (index: number) => {
+    setDirection(index > currentIndex ? "next" : "prev");
+    setCurrentIndex(index);
   };
 
-  // Indices for side phones on large screens
+  // --- Auto-scroll Effect ---
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      handleNext();
+    }, AUTO_SCROLL_INTERVAL);
+
+    return () => clearInterval(timer);
+  }, [isPaused, handleNext]);
+
+  if (!features) return null;
+
   const prevIndex = (currentIndex - 1 + totalFeatures) % totalFeatures;
   const nextIndex = (currentIndex + 1) % totalFeatures;
-
   const currentFeature = APP_CAROUSEL_FEATURES[currentIndex];
 
+  // Animation variants for dynamic sliding direction
+  const slideVariants = {
+    enter: (dir: "next" | "prev") => ({
+      x: dir === "next" ? 80 : -80,
+      opacity: 0,
+      scale: 0.95,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (dir: "next" | "prev") => ({
+      x: dir === "next" ? -80 : 80,
+      opacity: 0,
+      scale: 0.95,
+    }),
+  };
+
   return (
-    <section id={features.id} className="max-w-screen-lg mx-auto px-4 py-12 overflow-hidden">
+    <section id={features.id} className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
       {/* --- Existing Features Section --- */}
-      <div className="mb-12 max-w-none flex flex-col items-center prose prose-lg text-center">
-        <h1 className="mb-3">
-          <AnimatedText text={features.title} />
-        </h1>
-        <motion.div
-          className="h-2 bg-gradient-to-r from-primary to-secondary rounded-full overflow-hidden [--w:200px] md:[--w:350px]"
-          whileInView={{ width: "var(--w)" }}
-          viewport={{ amount: 1, once: true, margin: "0px 0px -100px 0px" }}
-        />
-        {features.subtitle && (
-          <motion.p
-            initial={{ y: "100%", opacity: 0 }}
-            whileInView={{ y: "0%", opacity: 0.7 }}
-            viewport={{ once: true }}
-            className="text-md max-w-lg"
-          >
-            {features.subtitle}
-          </motion.p>
-        )}
-      </div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6"
-      >
-        {features.cards.map((feat, index) => (
-          <motion.div
-            key={index}
-            variants={{
-              hidden: { x: "-100%", opacity: 0 },
-              visible: { x: 0, opacity: 1 },
-            }}
-            transition={{ delay: 0.25 + index * 0.25 }}
-            className={clsx(
-              "shadow-md border-primary/10 border-2 card relative overflow-hidden group px-12",
-              {
-                "col-span-2":
-                  index === features!.cards.length - 1 &&
-                  features!.cards.length % 2 === 1,
-              }
-            )}
-          >
-            <div className="relative mb-4 mt-4">
-              <div
-                className={clsx(
-                  "absolute left-0 right-0 top-0 bottom-0 bg-secondary/50 -z-10 rounded-lg"
-                )}
-              />
-              <figure className="py-4">
-                <img
-                  src={feat.icon}
-                  alt="feature icon"
-                  className="w-40 transition-transform group-hover:scale-90"
-                />
-              </figure>
-            </div>
-            <div className="w-full pt-0 px-0 card-body items-center text-center transition-transform max-w-none group-hover:scale-95">
-              <h2 className="card-title text-2xl font-bold">{feat.title}</h2>
-              <div className="h-0.5 w-full bg-primary/10" />
-              <p className="opacity-[.7]">{feat.subtitle}</p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      {/* --- Carousel Subsection Right Below Existing Features --- */}
+      {/* --- Carousel Subsection --- */}
       <div className="mt-20 pt-10 border-t border-primary/10 flex flex-col items-center">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold">App Showcase</h2>
-          <p className="text-sm opacity-70 mt-1">
-            See Frapp in action on mobile
-          </p>
+          <p className="text-sm opacity-70 mt-1">See Frapp in action on mobile</p>
         </div>
 
-        {/* Carousel Outer Container */}
-        <div className="relative w-full flex flex-col items-center">
-          {/* Phones Viewport */}
-          <div className="relative w-full flex items-center justify-center min-h-[620px]">
-            {/* Left Preview Phone (Large Screens Only) */}
+        {/* Carousel Container (Pauses Auto-scroll on Hover/Touch) */}
+        <div
+          className="relative w-full max-w-5xl flex flex-col items-center"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
+          {/* Viewport for Frames */}
+          <div className="relative w-full flex items-center justify-center min-h-[480px] sm:min-h-[580px] lg:min-h-[640px] px-4">
+            
+            {/* Left Side Frame (Desktop) */}
             <motion.div
               key={`prev-${prevIndex}`}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 0.4, x: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 0.35, x: 0 }}
               transition={{ duration: 0.3 }}
               onClick={handlePrev}
-              className="hidden lg:block absolute left-4 xl:left-8 z-10 cursor-pointer transition-transform hover:scale-95 scale-90 blur-[1px] select-none"
+              className="hidden lg:block absolute left-8 xl:left-12 z-10 cursor-pointer transform -translate-x-1/2 scale-75 xl:scale-85 blur-[1px] hover:blur-0 hover:opacity-75 transition-all select-none"
             >
               <AndroidFrame
                 src={APP_CAROUSEL_FEATURES[prevIndex].image}
@@ -162,31 +137,35 @@ function Features() {
               />
             </motion.div>
 
-            {/* Main Center Phone (All Screen Sizes) */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="z-20 shadow-2xl"
-              >
-                <AndroidFrame
-                  src={currentFeature.image}
-                  alt={currentFeature.title}
-                />
-              </motion.div>
-            </AnimatePresence>
+            {/* Main Center Frame */}
+            <div className="w-full max-w-[280px] sm:max-w-xs md:max-w-sm flex justify-center z-20">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={currentIndex}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="w-full shadow-2xl rounded-[2.5rem]"
+                >
+                  <AndroidFrame
+                    src={currentFeature.image}
+                    alt={currentFeature.title}
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-            {/* Right Preview Phone (Large Screens Only) */}
+            {/* Right Side Frame (Desktop) */}
             <motion.div
               key={`next-${nextIndex}`}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 0.4, x: 0 }}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 0.35, x: 0 }}
               transition={{ duration: 0.3 }}
               onClick={handleNext}
-              className="hidden lg:block absolute right-4 xl:right-8 z-10 cursor-pointer transition-transform hover:scale-95 scale-90 blur-[1px] select-none"
+              className="hidden lg:block absolute right-8 xl:right-12 z-10 cursor-pointer transform translate-x-1/2 scale-75 xl:scale-85 blur-[1px] hover:blur-0 hover:opacity-75 transition-all select-none"
             >
               <AndroidFrame
                 src={APP_CAROUSEL_FEATURES[nextIndex].image}
@@ -195,37 +174,37 @@ function Features() {
             </motion.div>
           </div>
 
-          {/* Active Feature Title & Description */}
-          <div className="mt-8 text-center max-w-md h-20 px-4">
-            <h3 className="text-xl font-bold text-primary">
+          {/* Active Feature Text Container */}
+          <div className="mt-6 text-center max-w-md min-h-[5rem] px-4">
+            <h3 className="text-xl font-bold text-primary transition-colors">
               {currentFeature.title}
             </h3>
-            <p className="text-sm opacity-75 mt-1">
+            <p className="text-sm opacity-75 mt-1.5 leading-relaxed">
               {currentFeature.description}
             </p>
           </div>
 
           {/* Controls & Pagination Indicators */}
-          <div className="flex items-center gap-4 mt-2">
+          <div className="flex items-center gap-4 mt-4">
             <button
               onClick={handlePrev}
-              className="btn btn-circle btn-outline btn-sm"
+              className="btn btn-circle btn-outline btn-sm hover:btn-primary"
               aria-label="Previous feature"
             >
               ❮
             </button>
 
-            {/* Indicator Dots */}
-            <div className="flex gap-1.5 overflow-x-auto max-w-[160px] py-1">
+            {/* Dots */}
+            <div className="flex items-center gap-2 py-2">
               {APP_CAROUSEL_FEATURES.map((_, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setCurrentIndex(idx)}
+                  onClick={() => handleSelectIndex(idx)}
                   className={clsx(
-                    "h-2 rounded-full transition-all duration-300 flex-shrink-0",
+                    "h-2.5 rounded-full transition-all duration-300",
                     currentIndex === idx
-                      ? "w-6 bg-primary"
-                      : "w-2 bg-primary/20 hover:bg-primary/40"
+                      ? "w-7 bg-primary"
+                      : "w-2.5 bg-primary/20 hover:bg-primary/50"
                   )}
                   aria-label={`Go to feature ${idx + 1}`}
                 />
@@ -234,7 +213,7 @@ function Features() {
 
             <button
               onClick={handleNext}
-              className="btn btn-circle btn-outline btn-sm"
+              className="btn btn-circle btn-outline btn-sm hover:btn-primary"
               aria-label="Next feature"
             >
               ❯
