@@ -122,7 +122,7 @@ function Header() {
                 className="flex flex-wrap gap-4 my-6 w-full justify-start not-prose"
               >
                 <motion.a 
-                  href={downloadLink || "https://github.com/Brianali-codes/Frapp/releases/download/v1.1.3/frappv1.1.3.apk"} 
+                  href={downloadLink || "https://github.com/Brianali-codes/Frapp/releases/download/v1.1.4/frappv1.1.4.apk"} 
                   variants={buttonVariants}
                   whileHover="hover"
                   whileTap="tap"

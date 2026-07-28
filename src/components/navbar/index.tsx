@@ -80,7 +80,7 @@ function Navbar() {
             ))}
           </ul>
           {topNavbar.cta && (
-            <a href="https://github.com/Brianali-codes/Frapp/releases/download/v1.1.3/frappv1.1.3.apk" className="ml-3 btn btn-primary btn-outline py-4">
+            <a href="https://github.com/Brianali-codes/Frapp/releases/download/v1.1.4/frappv1.1.4.apk" className="ml-3 btn btn-primary btn-outline py-4">
               {topNavbar.cta}
             </a>
           )}
@@ -105,7 +105,7 @@ function Navbar() {
           </motion.a>
         ))}
          {topNavbar.cta && (
-            <a href="https://github.com/Brianali-codes/Frapp/releases/download/v1.1.3/frappv1.1.3.apk" className="ml-3 btn btn-primary btn-outline py-4">
+            <a href="https://github.com/Brianali-codes/Frapp/releases/download/v1.1.4/frappv1.1.4.apk" className="ml-3 btn btn-primary btn-outline py-4">
               {topNavbar.cta}
             </a>
           )}
