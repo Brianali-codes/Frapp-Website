@@ -194,7 +194,7 @@ const templateConfig: TemplateConfig = {
         "/screenshots/2.webp",
         "/screenshots/3.webp",
       ],
-      rewards: ["Over Two Thousand \n Downloads", "Open source"],
+      rewards: ["Zero Ads. \n No Tracking.", "Open source"],
       usersDescription: "2000+ Downloads",
       headlineMark: [1, 3],
     },
