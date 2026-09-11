@@ -190,9 +190,9 @@ const templateConfig: TemplateConfig = {
       subtitle:
         "FRAPP (Freebie Radar App) is a clean, open-source utility aggregating the latest video game giveaways and premium game deals from Steam, Epic Games, GOG, and more, powered by the GamerPower and CheapShark APIs.",
       screenshots: [
-        "/screenshots/1.webp",
         "/screenshots/2.webp",
         "/screenshots/3.webp",
+        "/screenshots/1.webp",
       ],
       rewards: ["Zero Ads. \n No Tracking.", "Open source"],
       usersDescription: "2000+ Downloads",
