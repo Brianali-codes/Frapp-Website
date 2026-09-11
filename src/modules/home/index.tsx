@@ -25,7 +25,6 @@ function Home({ config }: Props) {
         <HowItWorks />
         <Faq />
         <AppBanner />
-        
         <Footer />
       </main>
     </ConfigContext.Provider>
