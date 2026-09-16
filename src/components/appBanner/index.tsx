@@ -74,7 +74,7 @@ function AppBanner() {
             >
               {/* Download Now Button */}
               <motion.a 
-                href={downloadLink || "https://github.com/Brianali-codes/Frapp/releases/download/v1.1.5/frappv1.1.5.apk"} 
+                href={downloadLink || "https://github.com/Brianali-codes/Frapp/releases/download/v1.1.6/frappv1.1.6.apk"} 
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
